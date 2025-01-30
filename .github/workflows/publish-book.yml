@@ -4,8 +4,8 @@ name: deploy-book
 on:
   push:
     branches:
-    - master
-    - main
+      - master
+      - main
     # If your git repository has the Jupyter Book within some-subfolder next to
     # unrelated files, you can make this run only if a file within that specific
     # folder has been modified.
@@ -21,37 +21,41 @@ jobs:
       pages: write
       id-token: write
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    # Install dependencies
-    - name: Set up Python 3.11
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.11
+      # Install dependencies
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
 
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
 
-    - name: cache executed notebooks
-      uses: actions/cache@v3
-      with:
-        path: website/_build/.jupyter_cache
-        key: jupyter-book-cache-${{ hashFiles('requirements.txt') }}
+      - name: cache executed notebooks
+        uses: actions/cache@v3
+        with:
+          path: website/_build/.jupyter_cache
+          key: jupyter-book-cache-${{ hashFiles('requirements.txt') }}
 
-    # Build the book
-    - name: Build the book
-      run: |
-        jupyter-book build website
+      # Build the book
+      - name: Build the book
+        run: |
+          jupyter-book build website
 
-    - name: Check if build folder exists
-      run: |
-        ls -l website/_build/html || echo "Directory does not exist!"
-    - name: Deploy to `gh-pages`
-      run: |
-        git checkout --orphan gh-pages
-        git rm -rf .
-        cp -r website/_build/html/* .
-        git add .
-        git commit -m "Deploy website"
-        git push --force origin gh-pages
+      - name: Check if build folder exists
+        run: |
+          ls -l website/_build/html || echo "Directory does not exist!"
+      - name: Set up Git user
+        run: |
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "GitHub Actions"
+      - name: Deploy to `gh-pages`
+        run: |
+          git checkout --orphan gh-pages
+          git rm -rf .
+          cp -r website/_build/html/* .
+          git add .
+          git commit -m "Deploy website"
+          git push --force origin gh-pages
