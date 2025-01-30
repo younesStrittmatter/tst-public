@@ -1,0 +1,43 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+- caption: 502A
+  chapters:
+  - file: content/502A/syllabus
+  - file: content/502A/Lecture 1/intro
+    sections:
+    - file: content/502A/Lecture 1/placeholder
+- caption: 502B
+  chapters:
+  - file: content/502B/intro
+  - file: content/502B/Primers/intro
+    sections:
+    - file: content/502B/Primers/notebooks/1 Scalars, Vectors, and Matrices
+    - file: content/502B/Primers/notebooks/2 Logistic Function
+    - file: content/502B/Primers/notebooks/3 Perceptron and XOR
+  - file: content/502B/Dynamics in Perception/intro
+    sections:
+    - file: content/502B/Dynamics in Perception/notebooks/1 Hebbian Learning
+    - file: content/502B/Dynamics in Perception/notebooks/2 Hopfield Networks
+    - file: content/502B/Dynamics in Perception/notebooks/3 Dynamic Systems and Bistable Perception
+  - file: content/502B/Decision Making/intro
+    sections:
+    - file: content/502B/Decision Making/notebooks/1 Drift Diffusion Models
+  - file: content/502B/Reinforcement Learning/intro
+    sections:
+    - file: content/502B/Reinforcement Learning/notebooks/1 Reinforcement Learning
+  - file: content/502B/Statistical Learning and Backpropagation/intro
+    sections:
+    - file: content/502B/Statistical Learning and Backpropagation/notebooks/1 Rumelhart
+  - file: content/502B/Statistical Learning and Language Processing/intro
+    sections:
+    - file: content/502B/Statistical Learning and Language Processing/notebooks/1 Language Processing
+  - file: content/502B/Selective Attention Automaticity and Control/intro
+    sections:
+    - file: content/502B/Selective Attention Automaticity and Control/notebooks/1 Attention and Control
+  - file: content/502B/Conflict Monitoring Effort and Control/intro
+    sections:
+    - file: content/502B/Conflict Monitoring Effort and Control/notebooks/1 Conflict Monitoring

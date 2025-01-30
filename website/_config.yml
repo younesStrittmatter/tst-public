@@ -1,0 +1,40 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: NEU-PSY-MOL-502
+author: Jonathan Cohen, Samuel Nastase, Alexander Ku
+copyright: '2025'
+logo: logo.svg
+
+execute:
+  execute_notebooks: auto
+  allow_errors: true
+
+latex:
+  latex_documents:
+    targetname: book.tex
+
+bibtex_bibfiles:
+  - references.bib
+
+repository:
+  url: https://github.com/younesStrittmatter/NEU-PSY-MOL-502 # Online location of your book
+  path_to_book: website  # Optional path to your book, relative to the repository root
+  branch: master  # Which branch of the repository should be used when creating links (optional)
+
+html:
+  use_repository_button: true
+  baseurl: https://younesstrittmatter.github.io/NEU-PSY-MOL-502/
+
+launch_buttons:
+  colab_url: https://colab.research.google.com
+  thebe: false
+
+
+# Jinja2 variables
+parse:
+  myst_substitutions:
+    repo_url: "https://github.com/younesStrittmatter/NEU-PSY-MOL-502"
+    raw_data_url: "https://github.com/younesStrittmatter/NEU-PSY-MOL-502/raw/refs/heads/main/data"
+    base_url: "https://younesstrittmatter.github.io/NEU-PSY-MOL-502"
+    assets_url: "https://younesstrittmatter.github.io/NEU-PSY-MOL-502/_static"
