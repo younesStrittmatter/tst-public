@@ -18,13 +18,13 @@ bibtex_bibfiles:
   - references.bib
 
 repository:
-  url: https://github.com/younesStrittmatter/NEU-PSY-MOL-502 # Online location of your book
+  url: https://github.com/younesStrittmatter/tst-public # Online location of your book
   path_to_book: website  # Optional path to your book, relative to the repository root
   branch: master  # Which branch of the repository should be used when creating links (optional)
 
 html:
   use_repository_button: true
-  baseurl: https://younesstrittmatter.github.io/NEU-PSY-MOL-502/
+  baseurl: https://younesstrittmatter.github.io/tst-public/
 
 launch_buttons:
   colab_url: https://colab.research.google.com
@@ -34,7 +34,7 @@ launch_buttons:
 # Jinja2 variables
 parse:
   myst_substitutions:
-    repo_url: "https://github.com/younesStrittmatter/NEU-PSY-MOL-502"
-    raw_data_url: "https://github.com/younesStrittmatter/NEU-PSY-MOL-502/raw/refs/heads/main/data"
-    base_url: "https://younesstrittmatter.github.io/NEU-PSY-MOL-502"
-    assets_url: "https://younesstrittmatter.github.io/NEU-PSY-MOL-502/_static"
+    repo_url: "https://github.com/younesStrittmatter/tst-public"
+    raw_data_url: "https://github.com/younesStrittmatter/tst-public/raw/refs/heads/main/data"
+    base_url: "https://younesstrittmatter.github.io/tst-public"
+    assets_url: "https://younesstrittmatter.github.io/tst-public/_static"
