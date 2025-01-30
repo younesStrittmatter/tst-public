@@ -47,26 +47,11 @@ jobs:
     - name: Check if build folder exists
       run: |
         ls -l website/_build/html || echo "Directory does not exist!"
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: "website/_build/html"
-  deploy:
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-    - name: Checkout repository  # ✅ Required for deploying
-      uses: actions/checkout@v3
-
-
-    # Deploy the book's HTML to GitHub Pages
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+    - name: Deploy to `gh-pages`
+      run: |
+        git checkout --orphan gh-pages
+        git rm -rf .
+        cp -r website/_build/html/* .
+        git add .
+        git commit -m "Deploy website"
+        git push --force origin gh-pages
