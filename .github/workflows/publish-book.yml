@@ -48,9 +48,13 @@ jobs:
       run: |
         jupyter-book build website
 
+    - name: Check if build folder exists
+      run: |
+        ls -l website/_build/html || echo "Directory does not exist!"
+
     # Upload the book's HTML as an artifact
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
+      uses: actions/upload-pages-artifact@v2
       with:
         path: "website/_build/html"
 
