@@ -41,14 +41,14 @@ jobs:
           key: jupyter-book-cache-${{ hashFiles('requirements.txt') }}
       - name: Run pre processing
         run: |
-          python _pre_processing.py
+          python _process/pre.py
       # Build the book
       - name: Build the book
         run: |
           jupyter-book build website
       - name : _post_processing
         run: |
-          python _post_processing.py
+          python process/post.py
 
       
 
