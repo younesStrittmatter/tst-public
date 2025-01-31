@@ -12,7 +12,7 @@ import nbformat
 
 # Directory paths
 SOURCE_DIR = "./website"
-BUILD_DIR = "./_website_build"
+BUILD_DIR = "./website"
 JUPYTER_BOOK_BUILD_CMD = ["jupyter-book", "build", "_website_build"]
 PUBLISH_CMD = "ghp-import -n -p -f _website_build/_build/html"
 
