@@ -25,14 +25,6 @@ def replace_colab_link(file_path):
     with open(file_path, "w") as f:
         f.write(replaced)
 def build():
-    # copy_if_changed(SOURCE_DIR, BUILD_DIR)
-    #
-    # _d = None
-    # with open(f"{BUILD_DIR}/_config.yml") as f:
-    #     _d = yaml.safe_load(f)
-    #     _d["repository"]["path_to_book"] = "_book_build"
-    #
-    # yaml.safe_dump(_d, open(f"{BUILD_DIR}/_config.yml", "w"))
 
     for root, dirs, files in os.walk(SOURCE_DIR):
         for file in files:
@@ -56,6 +48,11 @@ if __name__ == '__main__':
     main()
 
 
-"https://colab.research.google.com/github/PrincetonUniversity/NEU-PSY-502/blob/master/website/content/502B/Primers/notebooks/1 Scalars, Vectors, and Matrices.ipynb"
-
-"https://colab.research.google.com/github/PrincetonUniversity/NEU-PSY-502/blob/gh-pages/_source/content/502B/Primers/notebooks/1 Scalars, Vectors, and Matrices.ipynb"
+    # c = "https://colab.research.google.com/github/younesStrittmatter/tst-public/blob/gh-pages/sources/content/502B/Primers/notebooks/1 Scalars, Vectors, and Matrices.ipynb"
+    #
+    # "https://colab.research.google.com/github/PrincetonUniversity/NEU-PSY-502/blob/gh-pages/_source/content/502B/Primers/notebooks/1 Scalars, Vectors, and Matrices.ipynb"
+    #
+    # pattern = r"https://colab\.research\.google\.com/github/([^/]+)/([^/]+)/blob/master/website/(.+)"
+    # replacement = r"https://colab.research.google.com/github/\1/\2/blob/gh-pages/sources/\3"
+    # replaced = re.sub(pattern, replacement, c)
+    # print(replaced)

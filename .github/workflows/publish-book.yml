@@ -48,7 +48,7 @@ jobs:
           jupyter-book build website
       - name : _post_processing
         run: |
-          python process/post.py
+          python _process/post.py
 
       
 
