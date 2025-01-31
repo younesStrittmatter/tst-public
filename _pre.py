@@ -171,11 +171,13 @@ def build():
 
     for root, dirs, files in os.walk(SOURCE_DIR):
         for file in files:
-            if file.endswith(".ipynb"):
-                build_notebook(os.path.join(root, file))
-                process_notebook(os.path.join(root, file))
-            elif file.endswith(".md"):
-                build_markdown(os.path.join(root, file))
+
+            print(file)
+            # if file.endswith(".ipynb"):
+            #     build_notebook(os.path.join(root, file))
+            #     process_notebook(os.path.join(root, file))
+            # elif file.endswith(".md"):
+            #     build_markdown(os.path.join(root, file))
 
 
 
